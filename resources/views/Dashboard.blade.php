@@ -16,9 +16,7 @@
                 </p>
             </div>
         </div>
-
         <br>
-
         <div class="row row-cols-1 row-cols-md-2 g-4">
             @foreach ($courses as $c)
             <div class="col">
@@ -36,13 +34,9 @@
                 </div>
             </div>
             @endforeach
-
         </div>
-
-
     </div>
 </section>
-
 @else
 <section id="dashboard_landing">
     <div class="container row-bel">
@@ -58,9 +52,7 @@
                 </p>
             </div>
         </div>
-
         <br>
-
         <div class="card text-dark bg-light mb-3">
             <div class="row g-0">
                 <div class="col-md-4">
@@ -78,10 +70,7 @@
                 </div>
             </div>
         </div>
-
         <br>
-
-
         <div class="card text-dark bg-light mb-3">
             <div class="row g-0">
                 <div class="col-md-4">
@@ -98,10 +87,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <br>
-
+        </div><br>
         <div class="card text-dark bg-light mb-3">
             <div class="row g-0">
                 <div class="col-md-4">
@@ -120,10 +106,7 @@
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 @endif
-
-
 @endsection

@@ -8,16 +8,16 @@
             <div class="card border shadow p-3 rounded-5" style="max-width:20vw;max-height:370px;width:20vw;height:370px;overflow:hidden;">
                 <img src="{{asset('storage/uploaded/Course/'.$c->img)}}" style="height:50%; object-fit: cover; object-position: 25% 25%;">
                 <div class="card-body text-center">
-                    <h5 class="card-title text-center"><?=$c->name?></h5>
-                    <p class="text-muted" style="max-height:50px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><?=$c->deskripsi?></p>
+                    <h5 class="card-title text-center"><?= $c->name ?></h5>
+                    <p class="text-muted" style="max-height:50px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><?= $c->deskripsi ?></p>
                     @if (session('loggedin',FALSE))
-                        @if (isset($mycourses[($loop->index)]))
-                            @if ($c->id == $mycourses[($loop->index)]->id)                                                            
-                                <a href="{{route('addMyCourse', $c->id)}}" class="btn btn-primary disabled">ikuti</a>
-                            @endif
-                        @else
-                            <a href="{{route('addMyCourse', $c->id)}}" class="btn btn-primary">ikuti</a>
-                        @endif
+                    @if (isset($mycourses[($loop->index)]))
+                    @if ($c->id == $mycourses[($loop->index)]->id)
+                    <a href="{{route('addMyCourse', $c->id)}}" class="btn btn-primary disabled">ikuti</a>
+                    @endif
+                    @else
+                    <a href="{{route('addMyCourse', $c->id)}}" class="btn btn-primary">ikuti</a>
+                    @endif
                     @endif
                     <a href="{{route('article', $c->id)}}" class="btn btn-outline-primary">Lihat</a>
                 </div>

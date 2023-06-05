@@ -63,12 +63,8 @@ class adminController extends Controller
     {
         $article = article::find($request->id);
         $article->chapter=$request->chapter;
-        // $article->deskripsi=addslashes($request->deskripsi);
-        // $article->deskripsi=str_replace(['\\','\'', '"', '`','+','*','|'], ['','\\\'', '\"', '\`','\+','\*','\|'],$request->deskripsi);
         $article->deskripsi=base64_encode($request->deskripsi);
-        
         $article->save();
-        
         return redirect()->route('admin-article', $idc);
     }
 
@@ -83,10 +79,7 @@ class adminController extends Controller
             $gallerypic->storeAs('public/uploaded/Course/',$gallerypic->hashName());
             $course->img = $gallerypic->hashName();
         }
-
-        
         $course->save();
-        
         return redirect()->route('admin-course');
     }
 
@@ -100,9 +93,7 @@ class adminController extends Controller
             $gallerypic->storeAs('public/uploaded/Course/',$gallerypic->hashName());
             $course->img = $gallerypic->hashName();
         }
-
         $course->save();
-        
         return redirect()->route('admin-course');
     }
 
@@ -111,11 +102,8 @@ class adminController extends Controller
         $article = new article;
         $article->course_id = $request->courseId;
         $article->chapter = $request->chapter;
-        // $article->deskripsi=str_replace(['\\','\'', '"', '`','+','*','|'], ['','\\\'', '\"', '\`','\+','\*','\|'],$request->deskripsi);
         $article->deskripsi=base64_encode($request->deskripsi);
-
         $article->save();
-        
         return redirect()->route('admin-article',$request->courseId);
     }
 
@@ -124,7 +112,6 @@ class adminController extends Controller
         $course = course::find($id);
         Storage::delete('public/uploaded/Course/'.$course->image);
         $course->delete();
-        
         return redirect()->route('admin-course');
     }
 
@@ -132,8 +119,6 @@ class adminController extends Controller
     {
         $article = article::find($ida);
         $article->delete();
-        
         return redirect()->route('admin-article',$idc);
     }
-    
 }

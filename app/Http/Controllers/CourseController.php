@@ -11,7 +11,6 @@ class CourseController extends Controller
     public function index(){
         if (!empty(session('uid'))) {
             $mycourses = member::find(session('uid'))->courses()->get();
-            # code...
         }else{
             $mycourses = [];
         }

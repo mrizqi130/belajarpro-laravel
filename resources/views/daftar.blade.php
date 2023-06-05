@@ -21,7 +21,7 @@
                     <label for="password" class="form-label">Kata Sandi</label>
                     <div class="input-group" id="show_hide_password">
                         <input pattern="^(?=\S*\d)(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[a-zA-Z])\S{7,}\S$" type="password" class="form-control @if(session('daftar-failed')) <?= "is-invalid" ?> @endif)" id="password" name="password" required value="@if (session('daftar-failed.pw')){{session('daftar-failed.pw')}}@endif">
-                        
+
                         <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="bi bi-eye-slash" aria-hidden="true"></i></button>
                     </div>
                     <div id="passwordHelpBlock" class="form-text">
@@ -31,7 +31,7 @@
                 <div class="mb-3 ms-3 me-3">
                     <label for="password2" class="form-label">Konfirmasi Kata Sandi</label>
                     <div class="input-group" id="show_hide_password">
-                        <input pattern="^(?=\S*\d)(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[a-zA-Z])\S{7,}\S$" type="password" name="password2" class="form-control @if(session('daftar-failed')) is-invalid @endif)" required>                        
+                        <input pattern="^(?=\S*\d)(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[a-zA-Z])\S{7,}\S$" type="password" name="password2" class="form-control @if(session('daftar-failed')) is-invalid @endif)" required>
                         <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="bi bi-eye-slash" aria-hidden="true"></i></button>
                         <div class="invalid-feedback">
                             {{session('daftar-failed.msg2')}}
